@@ -1,0 +1,63 @@
+.insiders {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  min-height: 100vh;
+
+  color: #161616;
+  background-color: #b5b5b5;
+
+  table {
+    width: 90%;
+    margin: 0 auto;
+
+    border-collapse: collapse;
+
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.09);
+
+    thead {
+      height: 55px;
+
+      color: #cccccc;
+      background-color: #3c3839;
+    }
+
+    tr:nth-child(even) {
+      background-color: #9b9da2;
+    }
+
+    tr {
+      padding: 10px;
+
+      td {
+        padding: 10px;
+      }
+
+      td:nth-child(1) {
+        // font-weight: bold;
+
+        min-width: 100px;
+      }
+
+      // td:nth-child(2) {
+      // font-weight: bold;
+      // }
+    }
+
+    td {
+      padding: 5px 3px;
+
+      border: 0;
+    }
+  }
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
