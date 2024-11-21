@@ -1,42 +1,7 @@
 import axios from "axios"
 import * as cheerio from "cheerio"
 import { Context, Row } from "./insiderTypes"
-
-const insertSpaceToString = (insertIndex: number, stringToInsertTo: string) => {
-  const firstPart = stringToInsertTo.substring(0, insertIndex)
-  const secondPart = stringToInsertTo.substring(insertIndex, stringToInsertTo.length)
-  return `${firstPart} ${secondPart}`
-}
-
-const formatStringAsCurrency = (numberToFormat: string | number): string => {
-  if (!numberToFormat) {
-    return ""
-  }
-
-  // Bättre kan jag än denna kod
-  if (typeof numberToFormat === "number") {
-    numberToFormat = numberToFormat.toString()
-  }
-
-  if (numberToFormat.length === 8) {
-    const returnValue = insertSpaceToString(5, numberToFormat)
-    return insertSpaceToString(2, returnValue)
-  }
-
-  if (numberToFormat.length === 7) {
-    return insertSpaceToString(4, numberToFormat)
-  }
-
-  if (numberToFormat.length === 6) {
-    return insertSpaceToString(3, numberToFormat)
-  }
-
-  if (numberToFormat.length === 5) {
-    return insertSpaceToString(2, numberToFormat)
-  }
-
-  return numberToFormat
-}
+import { formatString, formatStringAsCurrency } from "../utils"
 
 const splitTableRows = (stringToFormat: string) => {
   return stringToFormat.replace(/<\/th>/g, "")
@@ -46,16 +11,7 @@ const splitTableRows = (stringToFormat: string) => {
 
 const formatTableRows = (entries: string[]) => {
   return entries.map(i => {
-    return i.replace(/&#xF6;/g, "ö")
-      .replace(/&#xE4;/g, "ä")
-      .replace(/&#xE9;/g, "å")
-      .replace(/&#xC5;/g, "å")
-      .replace(/&#xC5;/g, "å")
-      .replace(/&#xE5;/g, "å")
-      .replace(/&#xA0;/g, " ")
-      .replace(",", ".")
-      .replace(/&nbsp;/g, "")
-      .trim()
+    return formatString(i)
   })
 }
 
@@ -76,7 +32,7 @@ export const insidersController = async (ctx: Context): Promise<void> => {
     const row = {
       date: formatedRows[1],
       instrumentName: formatedRows[2],
-      person: formatedRows[3],
+      person: "aa" + formatedRows[3],
       title: formatedRows[4],
       type: formatedRows[6],
       instrumentType: formatedRows[8],
