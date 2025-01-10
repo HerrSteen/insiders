@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import insidersReducer from "./Insiders/insidersSlice";
+import editorReducer from "./editor/editorSlice";
 
 export const store = configureStore({
   reducer: {
     insiders: insidersReducer,
+    editor: editorReducer,
   },
 });
 

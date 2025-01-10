@@ -1,0 +1,137 @@
+.logo {
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: #14171F;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.wrapper {
+  caret-color: #FB0654;
+  background-color: #14171F;
+
+  ::selection {
+    background: #fb065463;
+  }
+}
+
+.editor {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%; /* For scrolling purpose */
+  width: 100vw;
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+
+
+  &__page {
+    background-color: #14171F;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
+    outline: none;
+    letter-spacing: 1px;
+    padding: 50px 60px;
+    width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      padding: 50px 0px;
+    }
+  }
+
+  &__line {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.9px;
+    color: #575757;
+    font-weight: 400;
+
+    &.focus {
+      // -webkit-animation:animateParagraphFocus ease 0.5s;
+      color: #c4d6e1;
+    }
+  }
+
+  &.readMode {
+    .editor__line {
+      -webkit-animation: none;
+      color: #c4d6e1;
+    }
+  }
+
+  &.boldMode {
+    .editor__line {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: 0.7px;
+      font-size: 14px;
+      -webkit-animation:animateBoldBlur 0.5s;
+      color: #75102F;
+      font-weight: bold;
+
+      &.focus {
+        -webkit-animation:animateBoldFocus 0.5s;
+        color: #FB0654;
+      }
+    }
+  }
+
+  &.readMode.boldMode {
+    .editor__line {
+      -webkit-animation: none;
+      color: #FB0654;
+    }
+  }
+}
+
+@-webkit-keyframes animateBoldFocus {
+  0% {
+    color: #75102F;
+  }
+
+  100% {
+    color: #FB0654;
+  }
+}
+
+@-webkit-keyframes animateBoldBlur {
+  0% {
+    color: #FB0654;
+  }
+
+  100% {
+    color: #75102F;
+  }
+}
+
+@-webkit-keyframes animateParagraphFocus {
+  0% {
+    color: #575757;
+  }
+
+  100% {
+    color: #c4d6e1;
+  }
+}
+
+@-webkit-keyframes animateParagraphBlur {
+  0% {
+    color: #c4d6e1;
+  }
+
+  100% {
+    color: #575757;
+  }
+}

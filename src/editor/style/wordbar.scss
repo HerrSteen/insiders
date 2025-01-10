@@ -1,0 +1,58 @@
+.wordBar {
+  &__wrapper {
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 40px;
+
+    letter-spacing: 0.7px;
+
+    background-color: #FB0654;
+  }
+
+  &__button {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+
+    padding: 10px;
+
+    color: #ffffffab;
+    border-right: 1px solid #ffffff47;
+  }
+
+  &__button--short {
+    flex: 1;
+  }
+
+  &__word {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 0 10px;
+
+    color: #fff;
+  }
+
+  &__suggestion {
+    font-family: arial;
+    font-size: 37px;
+
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    padding: 15px;
+
+    transform: translateX(-50%);
+
+    color: #706c6c;
+    border-radius: 7px;
+    background-color: #ffffff0f;
+  }
+}

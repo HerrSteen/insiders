@@ -13,6 +13,10 @@ router.get('/', async (ctx) => {
   await koaSend(ctx, './dist/index.html');
 })
 
+router.get('/editor', async (ctx) => {
+  await koaSend(ctx, './dist/index.html');
+})
+
 router.get('/api/get-insiders', insidersController)
 
 router.get('/assets/:item', async ctx => {

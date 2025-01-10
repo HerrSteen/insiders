@@ -1,0 +1,48 @@
+
+.theme-white {
+  .logo {
+    &__wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &.wrapper {
+    background-color: #f3f3f3;
+  }
+
+  .editor {
+    &__page {
+      background-color: #f3f3f3;
+    }
+
+    &__line {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.7px;
+      color: #c6c4c5;
+
+      &.focus {
+        color: #575757;
+      }
+    }
+
+    &.readMode {
+      .editor__line {
+        color: #575757;
+      }
+    }
+  }
+
+  .wordBar {
+    &__wrapper {
+      background-color: #b8b8b8;
+    }
+  }
+}

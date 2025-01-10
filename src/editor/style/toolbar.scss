@@ -1,0 +1,72 @@
+.toolbar {
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    -webkit-animation:showToolbar ease 1.5s;
+  }
+
+  &__button {
+    flex: 2;
+    background-color: #2d303a;
+    font-size: 15px;
+    color: #fff;
+    border: 0;
+    outline: none;
+    border-right: 1px solid #1d1e21;
+
+    &.active {
+      color: #FB0654;
+    }
+  }
+
+  &__wordcount {
+    letter-spacing: 0.7px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    align-self: center;
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+    padding: 10px;
+    background-color: red;
+    width: 50px;
+    background-color: #272727;
+  }
+}
+
+@-webkit-keyframes showToolbar {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animateButtonFocus {
+  0% {
+    background-color: #75102F;
+  }
+
+  100% {
+    background-color: #FB0654;
+  }
+}
+
+@-webkit-keyframes animateButtonBlur {
+  0% {
+    background-color: #FB0654;
+  }
+
+  100% {
+    background-color: #75102F;
+  }
+}

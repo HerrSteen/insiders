@@ -1,0 +1,29 @@
+.sendIt__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  background-color: #0ab366;
+}
+
+.sendIt__icon {
+  animation-name: fade-out;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+
+  opacity: 0;
+}
+
+@keyframes fade-out {
+
+from {
+  opacity: 1;
+}
+
+to {
+  opacity: 0;
+}
+
+}
